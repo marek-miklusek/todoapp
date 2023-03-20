@@ -1,0 +1,76 @@
+.form-group {
+   text-align: center;
+}
+
+.form-group h1 {
+   padding-top: .5em;
+}
+
+.timestamp {
+   margin: 0;
+   color: #888;
+}
+
+.anchor {
+   text-decoration: none;
+   margin-left: 1em;
+}
+
+.flash-message {
+   color: orange;
+}
+
+.controls {
+   margin-top: 1em;
+}
+
+.input {
+   display: none;
+}
+
+.list-group {
+   overflow-wrap: break-word;
+   max-width: 50em;
+   margin: 0 auto;
+}
+
+.sponge-bob {
+   max-width:20em;
+   margin: 0 auto;
+}
+
+.even {
+   background-color: #2c2c2c;
+}
+
+.btn-secondary {
+   position: relative;
+   top: 9px;
+   padding: 0 .5em .2em .5em;
+   color: #fff;
+}
+
+.btn-secondary:hover,
+.btn-secondary:active {
+   color: #ef134c;
+}
+
+#add-form,#edit-form {
+   max-width: 45em;
+   margin: 0 auto;
+}
+
+.alert {
+   /* padding: 0; */
+   width: 75%;
+   margin: 0 auto;;
+}
+
+
+
+
+
+
+
+
+
