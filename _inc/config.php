@@ -25,13 +25,18 @@ $database = new Medoo([
 ]);
 
 
+// CONSTANTS, NEVER CHANGE, ARE GLOBAL
+define('BASE_URL', 'http://localhost/todoapp');
+define('APP_PATH', realpath( __DIR__ . '/../' ));
+
+
 // GLOBAL VARIABLES
-$base_url = 'http://localhost/todoapp';
+// $base_url = 'http://localhost/todoapp';
 
 
 // FIX THE SLASH BEHIND INDEX.PHP 
-if ($_SERVER['PHP_SELF'] == '/todo-app/index.php/') {
-   redirect('index.php');
-}
+// if ($_SERVER['PHP_SELF'] == '/todoapp/index.php/') {
+//    redirect('index.php');
+// }
 
 ?>

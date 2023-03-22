@@ -55,7 +55,9 @@ function is_even($number) {
 }
 
 
-// CONVERT SPECIAL CHARACTERS TO HTML ENTITIES, BECAUSE OF SECURITY(CROSS SITE SCRIPTING)
+// CONVERT SPECIAL CHARACTERS TO HTML ENTITIES, 
+// USE ALWAYS WHEN USER HAS THE POSSIBILITY TO WRITE
+// ON THE PAGE, BECAUSE OF SECURITY(CROSS-SITE SCRIPTING, XSS)
 function plain($str) {
    return htmlspecialchars($str, ENT_QUOTES);
 }
@@ -72,6 +74,13 @@ function display_flash_mess() {
       unset($_SESSION['flash_message']);
       echo $message;
    }
+}
+
+
+// CREATES ABSOLUTE URL TO ASSETS FOLDER
+function assets ($path, $base = BASE_URL . '/assets/') {
+   $path = trim($path, '/');
+   return filter_var($base . $path, FILTER_SANITIZE_URL);
 }
 
 ?>

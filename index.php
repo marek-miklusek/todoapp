@@ -25,7 +25,7 @@ $data = $database->select('items',['id','text','created_at']);
       <?php
 
       if ( ! $data ) {
-         echo '<img class="sponge-bob" src="assets/img/to-do.gif" alt="sponge bob read todo list">';
+         echo '<img class="sponge-bob" src="'.assets('img/to-do.gif').'" alt="sponge bob read todo list">';
       }
 
       foreach ($data as $i => $item) {
@@ -53,6 +53,7 @@ $data = $database->select('items',['id','text','created_at']);
 </div>
 
 <?php include '_partials/footer.php' ?>
+
 
                   
 
