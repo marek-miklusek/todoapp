@@ -34,9 +34,4 @@ define('APP_PATH', realpath( __DIR__ . '/../' ));
 // $base_url = 'http://localhost/todoapp';
 
 
-// FIX THE SLASH BEHIND INDEX.PHP 
-// if ($_SERVER['PHP_SELF'] == '/todoapp/index.php/') {
-//    redirect('index.php');
-// }
-
 ?>

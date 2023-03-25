@@ -1,7 +1,6 @@
 <?php 
 
 function redirect($page, $status_code = 302) {
-   global $base_url;
 
    // if ($page == 'back') {
    //    $location = $_SERVER['HTTP_REFERER'];
@@ -18,7 +17,7 @@ function redirect($page, $status_code = 302) {
 
       case $page :
          $page = ltrim($page,'/');
-         $location = $base_url.'/'.$page;
+         $location = BASE_URL.'/'.$page;
    }
 
    header('Location: '.$location.'', true, $status_code);
@@ -50,8 +49,7 @@ function get_item() {
 }
 
 function is_even($number) {
-   $row = ($number % 2 == 0) ? 'even' : 'odd';
-   return $row;                              
+   return ($number % 2 == 0) ? 'even' : 'odd';                             
 }
 
 

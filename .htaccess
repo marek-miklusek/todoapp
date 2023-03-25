@@ -1,3 +1,6 @@
+# THIS FILE SOLVES SO THAT WE HAVE NICE ADDRESSES 
+# (e.g.localhost/todoapp/edit/4), ALWAYS OPEN INDEX.PHP
+
 # Turn on URL rewriting
 RewriteEngine On
 
@@ -5,7 +8,7 @@ RewriteEngine On
 RewriteBase /todoapp/
 
 # Protect application and system files from being viewed
-RewriteRule ^(_inc) - [F,L]
+# RewriteRule ^(_inc) - [F,L]
 
 # Allow any files or directories that exist to be displayed directly
 RewriteCond %{REQUEST_FILENAME} !-f
