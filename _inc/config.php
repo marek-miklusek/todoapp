@@ -29,9 +29,4 @@ $database = new Medoo([
 define('BASE_URL', 'http://localhost/todoapp');
 define('APP_PATH', realpath( __DIR__ . '/../' ));
 
-
-// GLOBAL VARIABLES
-// $base_url = 'http://localhost/todoapp';
-
-
 ?>

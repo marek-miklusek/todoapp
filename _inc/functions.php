@@ -1,24 +1,38 @@
 <?php 
 
-function redirect($page, $status_code = 302) {
+function get_items($auto_format = true) {
+   global $database;
 
-   // if ($page == 'back') {
-   //    $location = $_SERVER['HTTP_REFERER'];
-   // }
-   // else {
-   //    $page = ltrim($page,'/');
-   //    $location = $base_url.'/'.$page;
-   // }
+   $items = $database->select('items',['id','text','created_at']);
 
-   switch ($page) {
-      case $page == 'back' :
-         $location = $_SERVER['HTTP_REFERER'];
-         break;
-
-      case $page :
-         $page = ltrim($page,'/');
-         $location = BASE_URL.'/'.$page;
+   if ($auto_format) {
+      $items = array_map('format_item', $items);
    }
+
+   return $items;
+}
+
+function redirect($page, $status_code = 302) {
+   if ($page == 'back') {
+      $location = $_SERVER['HTTP_REFERER'];
+   }
+   else {
+      $page = ltrim($page,'/');
+      $location = BASE_URL.'/'.$page;
+   }
+
+   /* When the value of a single variable specifies the number
+   /* of different choices, it’s much cleaner to use the switch statement */
+
+   // switch ($page) {
+   //    case $page == 'back' :
+   //       $location = $_SERVER['HTTP_REFERER'];
+   //       break;
+
+   //    case $page :
+   //       $page = ltrim($page,'/');
+   //       $location = BASE_URL.'/'.$page;
+   // }
 
    header('Location: '.$location.'', true, $status_code);
    die('success');
@@ -79,6 +93,13 @@ function display_flash_mess() {
 function assets ($path, $base = BASE_URL . '/assets/') {
    $path = trim($path, '/');
    return filter_var($base . $path, FILTER_SANITIZE_URL);
+}
+
+function format_item($item) {
+   $item['text'] = plain($item['text']);
+   $item['created_at'] = date("j M Y, H:i",strtotime($item['created_at']));
+
+   return (object)$item;
 }
 
 ?>

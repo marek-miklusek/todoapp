@@ -1,8 +1,7 @@
 <?php 
 
 include '_partials/header.php';
-
-$data = $database->select('items',['id','text','created_at']);
+$items = get_items();
 
 ?>
 
@@ -22,31 +21,28 @@ $data = $database->select('items',['id','text','created_at']);
 
    <ul class="list-group">
 
-      <?php
+      <?php if ($items) : foreach ($items as $i => $item) : $row = $i++ ?>
 
-      if ( ! $data ) {
-         echo '<img class="sponge-bob" src="'.assets('img/to-do.gif').'" alt="sponge bob read todo list">';
-      }
-
-      foreach ($data as $i => $item) {
-         $row = $i++;
-         $new_date = date("j M Y, H:i",strtotime($item['created_at'])); 
-
-         echo '<li class="list-group-item '.is_even($row).'" id="item-'.$item['id'].'">'.plain($item['text']).'
+         <li class="list-group-item <?= is_even($row) ?>" id="item-<?= $item->id ?>">
+         
+            <?= $item->text ?>
                   
-                  <a class="anchor" href="edit.php?id='.$item['id'].'">edit</a>
+            <a href="edit.php?id=<?= $item->id ?>" class="anchor">edit</a>
 
-                  <form id="delete-form" class="float-end" action="_inc/delete-item.php" method="post">
-                     <input type="hidden" name="delete" value="'.$item['id'].'">
-                     <button id="'.$item['id'].'" class="btn btn-secondary ">x</button>
-                  </form>
+            <form id="delete-form" class="float-end" action="_inc/delete-item.php" method="post">
+               <input type="hidden" name="delete" value="<?= $item->id ?>">
+               <button id="<?= $item->id ?>" class="btn btn-secondary ">x</button>
+            </form>
 
-                  <p class="timestamp">'.$new_date.'</p>
+            <p class="date"><?= $item->created_at ?></p>
 
-               </li>';
-      }
+         </li>
 
-     ?>
+      <?php endforeach; else : ?>
+
+         <img class="sponge-bob" src="<?= assets('img/to-do.gif') ?>" alt="sponge bob read todo list">
+
+      <?php endif ?>
 
    </ul>
 
