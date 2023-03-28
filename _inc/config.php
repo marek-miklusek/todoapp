@@ -1,21 +1,20 @@
 <?php 
 
-// REQUIRE STUFF
+// Require stuff
 require 'vendor/autoload.php';
 require 'functions.php';
 
-
-// FLASH MESSAGE, COMPOSER PACKAGE TAMTAMCHIK/SIMPLE-FLASH
+// Flash message, composer package tamtamchik/simple-flash
 if ( ! session_id() ) @session_start();
 use \Tamtamchik\SimpleFlash\Flash;
 $flash = new Flash();
 
 
-// USING MEDOO NAMESPACE
+// Using medoo namespace
 use Medoo\Medoo;
 
 
-// CONNECT TO DATABASE
+// Connect to database
 $database = new Medoo([
    'type' => 'mysql',
    'host' => 'localhost',
@@ -24,8 +23,7 @@ $database = new Medoo([
    'password' => ''
 ]);
 
-
-// CONSTANTS, NEVER CHANGE, ARE GLOBAL
+// Constants
 define('BASE_URL', 'http://localhost/todoapp');
 define('APP_PATH', realpath( __DIR__ . '/../' ));
 

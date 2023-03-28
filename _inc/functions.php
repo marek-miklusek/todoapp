@@ -21,19 +21,6 @@ function redirect($page, $status_code = 302) {
       $location = BASE_URL.'/'.$page;
    }
 
-   /* When the value of a single variable specifies the number
-   /* of different choices, it’s much cleaner to use the switch statement */
-
-   // switch ($page) {
-   //    case $page == 'back' :
-   //       $location = $_SERVER['HTTP_REFERER'];
-   //       break;
-
-   //    case $page :
-   //       $page = ltrim($page,'/');
-   //       $location = BASE_URL.'/'.$page;
-   // }
-
    header('Location: '.$location.'', true, $status_code);
    die('success');
 }
@@ -67,15 +54,15 @@ function is_even($number) {
 }
 
 
-// CONVERT SPECIAL CHARACTERS TO HTML ENTITIES, 
-// USE ALWAYS WHEN USER HAS THE POSSIBILITY TO WRITE
-// ON THE PAGE, BECAUSE OF SECURITY(CROSS-SITE SCRIPTING, XSS)
+// CROSS-SITE SCRIPTING (XSS) !!!
+// Convert special characters to html entities,
+// use always when user has to possibility to write on the page
 function plain($str) {
    return htmlspecialchars($str, ENT_QUOTES);
 }
 
 
-// MY OWN FLASH MESSAGE FUNCTION
+// My own flash message function
 function set_flash_mess($str) {
    return $_SESSION['flash_message'] = $str;
 }
@@ -89,7 +76,7 @@ function display_flash_mess() {
 }
 
 
-// CREATES ABSOLUTE URL TO ASSETS FOLDER
+// Creates absolute url to assets folder
 function assets ($path, $base = BASE_URL . '/assets/') {
    $path = trim($path, '/');
    return filter_var($base . $path, FILTER_SANITIZE_URL);

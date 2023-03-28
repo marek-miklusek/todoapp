@@ -1,5 +1,5 @@
-# THIS FILE SOLVES SO THAT WE HAVE NICE ADDRESSES 
-# (e.g.localhost/todoapp/edit/4), ALWAYS OPEN INDEX.PHP
+# This solves so that we have nice addresses
+# (e.g.Localhost/todoapp/edit/1), always starts on index.php
 
 # Turn on URL rewriting
 RewriteEngine On

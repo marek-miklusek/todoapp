@@ -1,25 +1,24 @@
-// SETTINGS
+// Settings
 var addForm = $('#add-form'),
     editForm = $('#edit-form'),
     inputAdd = addForm.find('#text'); 
 
 
-//  ADD-FORM
+//  Add-form
 inputAdd.val('').focus();
 
 
-// EDIT-FORM
+// Edit-form
 editForm.find('#text').select();
 
 
-// DELETE-FORM
+// Delete-form
 $('.btn-secondary').click(function() {
   const id = $(this).attr('id');
   return confirm('Are you sure?');
 });
 
-
-// SHOW AND HIDE INPUT, I DO NOT USE THIS NOW
+// Show and hide input, not use now
 function showInput() {
   var x = document.getElementById("edit");
 
@@ -32,8 +31,7 @@ function showInput() {
   }
 } 
 
-
-// USE ENTER, NOT WORKING NOW PROBABLY BECAUSE OF AJAX
+// Using enter on confirm, not working probably because of ajax
 // inputAdd.on('keypress',function(event) {
 //   if (event.which === 13) {
 //     addForm.submit();
