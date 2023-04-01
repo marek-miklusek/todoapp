@@ -1,6 +1,7 @@
 <?php 
 
 include '_partials/header.php';
+
 $items = get_items();
 
 ?>

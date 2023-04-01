@@ -5,7 +5,6 @@ require 'config.php';
 $message = trim($_POST['message']);
 
 if ($message) {
-   
    $edit = $database->update("items", ["text" => $message], 
    ["id" => $_POST['id']]);
 
@@ -23,4 +22,4 @@ else {
    redirect('back');
 }
 
-?>                                                     
+                                                   

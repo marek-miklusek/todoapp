@@ -4,6 +4,7 @@
 require 'vendor/autoload.php';
 require 'functions.php';
 
+
 // Flash message, composer package tamtamchik/simple-flash
 if ( ! session_id() ) @session_start();
 use \Tamtamchik\SimpleFlash\Flash;
@@ -23,8 +24,7 @@ $database = new Medoo([
    'password' => ''
 ]);
 
+
 // Constants
 define('BASE_URL', 'http://localhost/todoapp');
 define('APP_PATH', realpath( __DIR__ . '/../' ));
-
-?>

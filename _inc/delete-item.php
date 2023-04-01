@@ -7,5 +7,3 @@ $delete = $database->delete('items',[
 ]);
 
 redirect('/');
-
-?>
