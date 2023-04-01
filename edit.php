@@ -22,7 +22,7 @@ if ( ! $item = get_item() )  {
 
          <p class="controls">
             <button name="submit" class="btn btn-success">Edit</button>
-            <a class="anchor" href="<?= $base_url ?>">back</a>
+            <a class="anchor" href="<?= BASE_URL ?>">back</a>
          </p>
 
       </form>
