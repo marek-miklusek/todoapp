@@ -1,6 +1,6 @@
 <?php 
 
-include '_partials/header.php';
+include_once '_partials/header.php';
 
 $items = get_items();
 
@@ -49,7 +49,7 @@ $items = get_items();
 
 </div>
 
-<?php include '_partials/footer.php' ?>
+<?php include_once '_partials/footer.php' ?>
 
 
                   

@@ -1,6 +1,6 @@
 <?php 
 
-include '_partials/header.php';
+include_once '_partials/header.php';
 
 if ( ! $item = get_item() )  {
    show404();
@@ -31,4 +31,4 @@ if ( ! $item = get_item() )  {
 
 </div>
 
-<?php include '_partials/footer.php' ?>
+<?php include_once '_partials/footer.php' ?>

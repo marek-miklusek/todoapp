@@ -1,8 +1,8 @@
 <?php 
 
 // Require stuff
-require 'vendor/autoload.php';
-require 'functions.php';
+require_once 'vendor/autoload.php';
+require_once 'functions.php';
 
 
 // Flash message, composer package tamtamchik/simple-flash
